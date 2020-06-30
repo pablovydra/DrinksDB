@@ -15,6 +15,8 @@ android {
         versionCode 1
         versionName "1.0"
 
+        multiDexEnabled true
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -47,7 +49,7 @@ dependencies {
     // RecyclerView
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
-    // LIFECYCLE
+    // Lifecycle
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     // Moshi
     implementation "com.squareup.moshi:moshi:1.8.0"
@@ -64,4 +66,9 @@ dependencies {
     // Room
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    // Gide
+    implementation "com.github.bumptech.glide:glide:4.8.0"
+
+    // Multidex
+    implementation 'com.android.support:multidex:1.0.3'
 }

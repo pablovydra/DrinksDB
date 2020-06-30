@@ -19,39 +19,36 @@ class OverviewViewModel : ViewModel() {
     val response: LiveData<String>
         get() = _response
 
-    private val _properties = MutableLiveData<DrinksResponse>()
-    val properties: LiveData<DrinksResponse>
-        get() = _properties
+    private val _drinkByName = MutableLiveData<List<DrinkList>>()
+    val drinkByName: LiveData<List<DrinkList>>
+        get() = _drinkByName
 
-    private val _drinks = MutableLiveData<List<DrinkList>>()
-    val drinks: LiveData<List<DrinkList>>
-        get() = _drinks
+    private val _drinksAll = MutableLiveData<List<DrinkList>>()
+    val drinksAll: LiveData<List<DrinkList>>
+        get() = _drinksAll
 
     private val _internet = MutableLiveData<Boolean>()
     val internet: LiveData<Boolean>
         get() = _internet
 
-    // DRINK TO SEARCH
-    private val _drinkName = MutableLiveData<String>()
-    val drinkName: LiveData<String>
-        get() = _drinkName
-
     // JOB
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
-    // GET
-    fun getDrinksProperties(name: String) {
+    init {
+        getDrinksByName("all")
+    }
+
+    // GET BY FILTER SEARCH: NAME
+    fun getDrinksByName(drink: String) {
         coroutineScope.launch {
-            // Get the Deferred object for our Retrofit request
-            var getPropertiesDeferred = DrinksApi.retrofitService.getProperties(name)
+            var getPropertiesDeferred = DrinksApi.retrofitService.getProperties(drink)
             try {
-                // Await the completion of our Retrofit request
                 var listResult = getPropertiesDeferred.await()
 
-                _drinks.value = listResult.drinks
+                _drinkByName.value = listResult.drinks
 
-                Log.e("OverviewViewModel", "cantidad: ${drinks.value?.size}")
+                Log.e("OverviewViewModel", "cantidad: ${drinkByName.value?.size}")
                 Log.e("OverviewViewModel", "Response: ${listResult}")
 
                 _internet.value = true

@@ -5,8 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.vydra.possumusdrinks.R
 import com.vydra.possumusdrinks.databinding.FragmentOverviewBinding
 
@@ -19,7 +24,6 @@ class OverviewFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentOverviewBinding>(
             inflater,
             R.layout.fragment_overview,
@@ -27,24 +31,26 @@ class OverviewFragment : Fragment() {
             false
         )
 
-        //
         binding.setLifecycleOwner(this)
+
+        // VIEWMODEL
         viewModel = ViewModelProviders.of(this).get(OverviewViewModel::class.java)
 
-//        val observer = Observer<view> { contacts ->
-//            if (contacts != null) {
-//                var text = ""
-//                for (contact in contacts) {
-//                    text += contact.lastName + " " + contact.firstName + " - " + contact.phoneNumber + "\n"
-//                }
-//                contacts_textView.text = text
-//            }
-//        }
-//        contactsViewModel.contacts.observe(this, observer)
-
+        // CLICK FUNCTIONS
         binding.buttonSearchName.setOnClickListener {
-            viewModel.getDrinksProperties(binding.inputName)
+            viewModel.getDrinksByName(binding.inputName.text.toString())
         }
+
+        // RECYCLERVIEW
+        viewModel.drinkByName.observe(viewLifecycleOwner, Observer {
+            binding.recyclerView.adapter = OverviewAdapter(OverviewAdapter.OnClickListener {
+                Toast.makeText(context, "Test", Toast.LENGTH_LONG).show()
+            }, it)
+        })
+
+        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(activity)
+        binding.recyclerView.layoutManager = layoutManager
+        binding.recyclerView.setHasFixedSize(true)
 
         return binding.root
     }

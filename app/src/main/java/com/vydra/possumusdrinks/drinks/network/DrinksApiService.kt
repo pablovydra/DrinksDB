@@ -23,6 +23,14 @@ private val retrofit = Retrofit.Builder()
 
 interface DrinksApiService {
 
+    // FILTER SEARCH BY INGREDIENT
+    //
+
+    // FILTER ALL TO PREVIEW
+    //
+
+
+    // FILTER SEARCH BY NAME
     @GET("/api/json/v1/1/search.php")
     fun getProperties(
         @Query("s") s: String

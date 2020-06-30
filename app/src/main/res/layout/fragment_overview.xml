@@ -17,14 +17,19 @@
             android:id="@+id/input_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{viewModel.drinkName}"
-            android:ems="10" />
+            android:ems="10"
+            android:hint="Search by Name" />
 
         <Button
             android:id="@+id/button_searchName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@android:string/search_go" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

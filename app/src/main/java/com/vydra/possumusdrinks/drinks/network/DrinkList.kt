@@ -7,5 +7,6 @@ import com.squareup.moshi.JsonClass
 data class DrinkList(
     @Json(name = "idDrink")
     val idDrink: String?,
-    val strDrink: String?
+    val strDrink: String?,
+    val strDrinkThumb: String?
 )
