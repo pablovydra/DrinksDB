@@ -28,7 +28,23 @@ class OverviewFragment : Fragment() {
         )
 
         //
+        binding.setLifecycleOwner(this)
         viewModel = ViewModelProviders.of(this).get(OverviewViewModel::class.java)
+
+//        val observer = Observer<view> { contacts ->
+//            if (contacts != null) {
+//                var text = ""
+//                for (contact in contacts) {
+//                    text += contact.lastName + " " + contact.firstName + " - " + contact.phoneNumber + "\n"
+//                }
+//                contacts_textView.text = text
+//            }
+//        }
+//        contactsViewModel.contacts.observe(this, observer)
+
+        binding.buttonSearchName.setOnClickListener {
+            viewModel.getDrinksProperties(binding.inputName)
+        }
 
         return binding.root
     }

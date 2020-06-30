@@ -3,19 +3,30 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.vydra.possumusdrinks.drinks.overview.OverviewViewModel" />
     </data>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".drinks.overview.OverviewFragment">
+        android:orientation="vertical">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <EditText
+            android:id="@+id/input_name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.drinkName}"
+            android:ems="10" />
 
-    </FrameLayout>
+        <Button
+            android:id="@+id/button_searchName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
+    </LinearLayout>
+
+
 </layout>

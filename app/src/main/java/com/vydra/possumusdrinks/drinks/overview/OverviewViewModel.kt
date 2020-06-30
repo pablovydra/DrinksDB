@@ -24,33 +24,34 @@ class OverviewViewModel : ViewModel() {
         get() = _properties
 
     private val _drinks = MutableLiveData<List<DrinkList>>()
-    val agenda: LiveData<List<DrinkList>>
+    val drinks: LiveData<List<DrinkList>>
         get() = _drinks
 
     private val _internet = MutableLiveData<Boolean>()
     val internet: LiveData<Boolean>
         get() = _internet
 
+    // DRINK TO SEARCH
+    private val _drinkName = MutableLiveData<String>()
+    val drinkName: LiveData<String>
+        get() = _drinkName
+
     // JOB
     private var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
-    init {
-        getDrinksProperties()
-    }
-
     // GET
-    private fun getDrinksProperties() {
+    fun getDrinksProperties(name: String) {
         coroutineScope.launch {
             // Get the Deferred object for our Retrofit request
-            var getPropertiesDeferred = DrinksApi.retrofitService.getProperties("margarita")
+            var getPropertiesDeferred = DrinksApi.retrofitService.getProperties(name)
             try {
                 // Await the completion of our Retrofit request
                 var listResult = getPropertiesDeferred.await()
 
                 _drinks.value = listResult.drinks
 
-                Log.e("OverviewViewModel", "cantidad: ${agenda.value?.size}")
+                Log.e("OverviewViewModel", "cantidad: ${drinks.value?.size}")
                 Log.e("OverviewViewModel", "Response: ${listResult}")
 
                 _internet.value = true
