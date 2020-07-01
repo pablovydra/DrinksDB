@@ -17,25 +17,30 @@
             android:id="@+id/input_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_border"
             android:ems="10"
-            android:hint="Search by Name"
+            android:hint="Search"
+            android:paddingLeft="17dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
             android:selectAllOnFocus="false" />
 
         <Switch
             android:id="@+id/switch_ingredient"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textOff="No Alcohol" />
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Has alcohol?" />
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search by:" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
@@ -54,6 +59,7 @@
             android:id="@+id/button_searchName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@android:string/search_go" />
 
         <androidx.recyclerview.widget.RecyclerView
