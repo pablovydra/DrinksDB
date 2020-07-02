@@ -6,4 +6,9 @@
 
     // CUSTOM COLORS
     <color name="red">#BD044E</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey_search">#DDDADA</color>
+    <color name="grey_search_text">#878686</color>
+    <color name="icon_bg">#DDDADA</color>
+    <color name="icon_bg_selected">#C8FD33</color>
 </resources>
