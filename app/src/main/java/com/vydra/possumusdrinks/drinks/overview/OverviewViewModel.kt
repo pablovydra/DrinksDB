@@ -40,13 +40,13 @@ class OverviewViewModel : ViewModel() {
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
     init {
-        getDrinksByName("all", "Alcoholic")
+        getDrinksByName("all")
     }
 
     // GET BY FILTER SEARCH: NAME
-    fun getDrinksByName(drink: String, alcoholic: String) {
+    fun getDrinksByName(drink: String) {
         coroutineScope.launch {
-            var getPropertiesDeferred = DrinksApi.retrofitService.getProperties(drink, alcoholic)
+            var getPropertiesDeferred = DrinksApi.retrofitService.getProperties(drink)
             try {
                 var listResult = getPropertiesDeferred.await()
 
@@ -68,10 +68,10 @@ class OverviewViewModel : ViewModel() {
     }
 
     // GET BY FILTER SEARCH: INGREDIENT
-    fun getDrinksByIngredient(Ingredient: String, alcoholic: String) {
+    fun getDrinksByIngredient(Ingredient: String) {
         coroutineScope.launch {
             var getPropertiesDeferred =
-                DrinksApi.retrofitService.getProperties2(Ingredient, alcoholic)
+                DrinksApi.retrofitService.getProperties2(Ingredient)
             try {
                 var listResult = getPropertiesDeferred.await()
 

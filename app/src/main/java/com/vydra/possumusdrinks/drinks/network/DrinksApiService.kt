@@ -26,8 +26,7 @@ interface DrinksApiService {
     // FILTER SEARCH BY NAME
     @GET("/api/json/v1/1/search.php")
     fun getProperties(
-        @Query("s") s: String,
-        @Query("a") a: String
+        @Query("s") s: String
     ):
             Deferred<DrinksResponse>
 

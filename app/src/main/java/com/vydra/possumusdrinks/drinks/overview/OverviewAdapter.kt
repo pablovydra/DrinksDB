@@ -26,9 +26,12 @@ class OverviewAdapter(val onClickListener: OnClickListener,private val exampleLi
         val currentItem = exampleList[position]
 
         holder.textView1.text = currentItem.strDrink.toString()
-        holder.textView2.text = currentItem.idDrink.toString()
         val uri: String = currentItem.strDrinkThumb.toString()
-        Glide.with(holder.itemView.context).load(uri).into(holder.imageUrl)
+
+        Glide.with(holder.itemView.context)
+            .load(uri)
+            .circleCrop()
+            .into(holder.imageUrl)
 
         holder.itemView.setOnClickListener {
             onClickListener.onClick(currentItem)
@@ -39,7 +42,6 @@ class OverviewAdapter(val onClickListener: OnClickListener,private val exampleLi
 
     class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val textView1: TextView = itemView.text_title
-        val textView2: TextView = itemView.text_id
         val imageUrl: ImageView = itemView.imageUrl
     }
 

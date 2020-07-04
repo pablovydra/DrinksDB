@@ -7,4 +7,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="progressBarStyle">
+        <item name="colorAccent">@color/icon_bg_selected</item>
+    </style>
+
 </resources>
