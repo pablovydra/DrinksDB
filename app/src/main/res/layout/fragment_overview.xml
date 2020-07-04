@@ -93,7 +93,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/input_name" />
 
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/image_filterName"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginStart="16dp"
@@ -105,46 +105,46 @@
                         app:srcCompat="@drawable/ic_search_name" />
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/image_filterIngredient"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginLeft="8dp"
                         android:background="@drawable/icon_bg"
-                        app:layout_constraintStart_toEndOf="@+id/imageView"
-                        app:layout_constraintTop_toTopOf="@+id/imageView"
+                        app:layout_constraintStart_toEndOf="@+id/image_filterName"
+                        app:layout_constraintTop_toTopOf="@+id/image_filterName"
                         app:srcCompat="@drawable/ic_search_ingredients" />
 
                     <ImageView
                         android:id="@+id/imageView3"
                         android:layout_width="5dp"
                         android:layout_height="20dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                        app:layout_constraintBottom_toBottomOf="@+id/image_filterName"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/imageView"
+                        app:layout_constraintTop_toTopOf="@+id/image_filterName"
                         app:srcCompat="@drawable/rounded_corners_all" />
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/alcohol_yes"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginRight="8dp"
-                        android:background="@drawable/icon_bg"
-                        app:layout_constraintEnd_toStartOf="@+id/imageView5"
-                        app:layout_constraintTop_toTopOf="@+id/imageView2"
+                        android:background="@drawable/icon_bg_selected"
+                        app:layout_constraintEnd_toStartOf="@+id/alcohol_no"
+                        app:layout_constraintTop_toTopOf="@+id/image_filterIngredient"
                         app:srcCompat="@drawable/ic_search_alcohol" />
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/alcohol_no"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginRight="16dp"
                         android:background="@drawable/icon_bg"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/imageView4"
+                        app:layout_constraintTop_toTopOf="@+id/image_filterIngredient"
                         app:srcCompat="@drawable/ic_search_noalcohol" />
 
                     <TextView
@@ -153,7 +153,7 @@
                         android:layout_height="wrap_content"
                         android:text="With alcohol?"
                         app:layout_constraintBaseline_toBaselineOf="@+id/text_searchby"
-                        app:layout_constraintStart_toStartOf="@+id/imageView4" />
+                        app:layout_constraintStart_toStartOf="@+id/alcohol_yes" />
 
                     <TextView
                         android:id="@+id/textView5"
@@ -161,9 +161,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Name"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView"
-                        app:layout_constraintStart_toStartOf="@+id/imageView"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                        app:layout_constraintEnd_toEndOf="@+id/image_filterName"
+                        app:layout_constraintStart_toStartOf="@+id/image_filterName"
+                        app:layout_constraintTop_toBottomOf="@+id/image_filterName" />
 
                     <TextView
                         android:id="@+id/textView6"
@@ -171,9 +171,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Ingredient"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-                        app:layout_constraintStart_toStartOf="@+id/imageView2"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                        app:layout_constraintEnd_toEndOf="@+id/image_filterIngredient"
+                        app:layout_constraintStart_toStartOf="@+id/image_filterIngredient"
+                        app:layout_constraintTop_toBottomOf="@+id/image_filterIngredient" />
 
                     <TextView
                         android:id="@+id/textView7"
@@ -181,9 +181,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Yes"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-                        app:layout_constraintStart_toStartOf="@+id/imageView4"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                        app:layout_constraintEnd_toEndOf="@+id/alcohol_yes"
+                        app:layout_constraintStart_toStartOf="@+id/alcohol_yes"
+                        app:layout_constraintTop_toBottomOf="@+id/alcohol_yes" />
 
                     <TextView
                         android:id="@+id/textView8"
@@ -191,9 +191,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="No"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-                        app:layout_constraintStart_toStartOf="@+id/imageView5"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                        app:layout_constraintEnd_toEndOf="@+id/alcohol_no"
+                        app:layout_constraintStart_toStartOf="@+id/alcohol_no"
+                        app:layout_constraintTop_toBottomOf="@+id/alcohol_no" />
 
                     <ImageView
                         android:id="@+id/button_searchName"
@@ -204,7 +204,7 @@
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView5"
-                        app:srcCompat="@drawable/rounded_corners_all" />
+                        app:srcCompat="@drawable/icon_bg_selected" />
 
                     <TextView
                         android:id="@+id/textView9"
@@ -261,29 +261,19 @@
                         android:layout_height="0dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:overScrollMode="never"
+                        android:cacheColorHint="@android:color/transparent"
+                        android:divider="#FFFFFF"
+                        android:horizontalSpacing="1dp"
+                        android:layoutAnimation="@anim/layout_animation_fall_down"
+                        android:listSelector="@android:color/transparent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="23dp"
-            android:layout_gravity="bottom|right"
-            android:layout_margin="10dp"
-            android:backgroundTint="@color/red"
-            android:clickable="true"
-            android:elevation="0dp"
-            android:src="@drawable/abc_vector_test"
-            app:backgroundTint="@color/red"
-            app:borderWidth="0dp"
-            app:fabCustomSize="65dp"
-            app:fabSize="auto"
-            app:maxImageSize="60dp" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

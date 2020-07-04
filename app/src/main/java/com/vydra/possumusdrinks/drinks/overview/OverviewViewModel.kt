@@ -23,6 +23,10 @@ class OverviewViewModel : ViewModel() {
     val drinkByName: LiveData<List<DrinkList>>
         get() = _drinkByName
 
+    private val _drinkByIngredient = MutableLiveData<List<DrinkList>>()
+    val drinkByIngredient: LiveData<List<DrinkList>>
+        get() = _drinkByIngredient
+
     private val _drinksAll = MutableLiveData<List<DrinkList>>()
     val drinksAll: LiveData<List<DrinkList>>
         get() = _drinksAll
@@ -36,19 +40,44 @@ class OverviewViewModel : ViewModel() {
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
     init {
-        getDrinksByName("all")
+        getDrinksByName("all", "Alcoholic")
     }
 
     // GET BY FILTER SEARCH: NAME
-    fun getDrinksByName(drink: String) {
+    fun getDrinksByName(drink: String, alcoholic: String) {
         coroutineScope.launch {
-            var getPropertiesDeferred = DrinksApi.retrofitService.getProperties(drink)
+            var getPropertiesDeferred = DrinksApi.retrofitService.getProperties(drink, alcoholic)
             try {
                 var listResult = getPropertiesDeferred.await()
 
                 _drinkByName.value = listResult.drinks
 
                 Log.e("OverviewViewModel", "cantidad: ${drinkByName.value?.size}")
+                Log.e("OverviewViewModel", "Response: ${listResult}")
+
+                _internet.value = true
+
+            } catch (e: Exception) {
+                _response.value = "Failure: ${e.message}"
+                Log.e("OverviewViewModel", "${e.message}")
+
+                _internet.value = false
+
+            }
+        }
+    }
+
+    // GET BY FILTER SEARCH: INGREDIENT
+    fun getDrinksByIngredient(Ingredient: String, alcoholic: String) {
+        coroutineScope.launch {
+            var getPropertiesDeferred =
+                DrinksApi.retrofitService.getProperties2(Ingredient, alcoholic)
+            try {
+                var listResult = getPropertiesDeferred.await()
+
+                _drinkByIngredient.value = listResult.drinks
+
+                Log.e("OverviewViewModel", "cantidad: ${drinkByIngredient.value?.size}")
                 Log.e("OverviewViewModel", "Response: ${listResult}")
 
                 _internet.value = true
