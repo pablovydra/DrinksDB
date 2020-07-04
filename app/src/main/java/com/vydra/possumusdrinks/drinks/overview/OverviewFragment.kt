@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -32,6 +33,15 @@ class OverviewFragment : Fragment() {
         )
 
         binding.setLifecycleOwner(this)
+
+        // TOOLBAR
+        if (activity is AppCompatActivity) {
+            (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+            (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(false)
+            (activity as AppCompatActivity).supportActionBar!!.setHomeButtonEnabled(false)
+            (activity as AppCompatActivity).supportActionBar!!.setDisplayShowTitleEnabled(true);
+            (activity as AppCompatActivity).supportActionBar!!.setTitle(" ")
+        }
 
         // VIEWMODEL
         viewModel = ViewModelProviders.of(this).get(OverviewViewModel::class.java)
