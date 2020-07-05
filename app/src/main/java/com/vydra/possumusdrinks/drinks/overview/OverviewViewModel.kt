@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.vydra.possumusdrinks.drinks.network.DrinkList
 import com.vydra.possumusdrinks.drinks.network.DrinksApi
-import com.vydra.possumusdrinks.drinks.network.DrinksResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

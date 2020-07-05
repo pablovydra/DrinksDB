@@ -2,7 +2,6 @@ package com.vydra.possumusdrinks.drinks.details
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import com.vydra.possumusdrinks.drinks.database.Drink
 import com.vydra.possumusdrinks.drinks.database.DrinksRepository
 

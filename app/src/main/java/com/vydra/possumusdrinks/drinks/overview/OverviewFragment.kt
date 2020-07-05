@@ -1,7 +1,6 @@
 package com.vydra.possumusdrinks.drinks.overview
 
 import android.os.Bundle
-import android.speech.tts.TextToSpeech
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.view.animation.AnimationUtils
@@ -11,7 +10,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -115,8 +113,6 @@ class OverviewFragment : Fragment() {
         val scrollViewAnimation =
             AnimationUtils.loadLayoutAnimation(this.context, R.anim.layout_animation_fall_down)
         binding.recyclerView.setLayoutAnimation(scrollViewAnimation)
-
-
 
         return binding.root
     }

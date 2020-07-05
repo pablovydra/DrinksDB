@@ -30,11 +30,12 @@
                 android:backgroundTint="@color/red"
                 android:fitsSystemWindows="true"
                 app:contentScrim="@color/icon_bg_selected"
+                app:expandedTitleMargin="0dp"
                 app:expandedTitleMarginEnd="0dp"
-                app:expandedTitleMarginStart="15dp"
+                app:expandedTitleMarginStart="0dp"
                 app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:statusBarScrim="#D1D1D1"
+                app:statusBarScrim="@color/icon_bg_selected"
                 app:titleTextColor="@color/white">
 
                 <ImageView
