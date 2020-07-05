@@ -87,12 +87,12 @@ class OverviewFragment : Fragment() {
         // RECYCLERVIEW
         viewModel.drinkByName.observe(viewLifecycleOwner, Observer {
             binding.recyclerView.adapter = OverviewAdapter(OverviewAdapter.OnClickListener {
-                Toast.makeText(context, "Test", Toast.LENGTH_LONG).show()
+                view?.findNavController()?.navigate(OverviewFragmentDirections.actionOverviewFragmentToDetailsFragment(it.strDrink,it.strDrinkThumb))
             }, it)
         })
         viewModel.drinkByIngredient.observe(viewLifecycleOwner, Observer {
             binding.recyclerView.adapter = OverviewAdapter(OverviewAdapter.OnClickListener {
-                Toast.makeText(context, "Test", Toast.LENGTH_LONG).show()
+                view?.findNavController()?.navigate(OverviewFragmentDirections.actionOverviewFragmentToDetailsFragment(it.strDrink,it.strDrinkThumb))
             }, it)
         })
 
