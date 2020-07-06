@@ -11,13 +11,22 @@ This repository contains an Android project using Kotlin, MVVM Architecture Comp
 <img width="309" height="550" src="Screenshots/screen1.png"> <img width="309" height="550" src="Screenshots/screen2.png">
 
 ## Library Used
-* [Android Architecture Components](https://developer.android.com/topic/libraries/architecture/)
-* [Live Data](https://developer.android.com/topic/libraries/architecture/livedata)
-* [View Model](https://developer.android.com/topic/libraries/architecture/viewmodel)
-* [Retrofit](https://square.github.io/retrofit/)
 * [thecocktaildb API](https://www.thecocktaildb.com/api.php)
-* [Glide](https://github.com/bumptech/glide)
+* [MVVM Architecture Components](https://developer.android.com/topic/libraries/architecture/)
+* [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
+* [View Model](https://developer.android.com/topic/libraries/architecture/viewmodel)
+* [Retrofit2](https://square.github.io/retrofit/)
+* [Moshi](https://github.com/square/moshi)
+* [ROOM](https://developer.android.com/topic/libraries/architecture/room?gclid=Cj0KCQjwl4v4BRDaARIsAFjATPnKKVVy9yBUiZhCcmGbmLl-6TKUusgYdur0OZq2MOQdsOLN6jXLpvQaAk5mEALw_wcB&gclsrc=aw.ds)
+* [Glide](https://bumptech.github.io/glide/)
+* [Data Binding](https://developer.android.com/topic/libraries/data-binding)
+* [SafeArgs](https://developer.android.com/guide/navigation/navigation-pass-data)
+* [Navigation](https://developer.android.com/jetpack/androidx/releases/navigation)
+* [Material design](https://material.io/design/)
 * [Recyclerview](https://developer.android.com/guide/topics/ui/layout/recyclerview)
+* [Coroutines](https://developer.android.com/kotlin/coroutines)
+* [Collapsing toolbar](https://material.io/develop/android/components/collapsing-toolbar-layout/)
+* [Animations](https://developer.android.com/training/animation/overview)
 
 ## Author
 
