@@ -8,7 +8,7 @@ This repository contains an Android project using Kotlin, MVVM Architecture Comp
 * Show list of drinks, search by name or ingredient and save it to favorites
 
 ## App demo 
-<img width="309" height="550" src="Screenshots/screen1.png"> <img width="309" height="550" src="Screenshots/screen2.png">
+<img width="309" height="550" src="Screenshots/video.gif"> <img width="309" height="550" src="Screenshots/screen1.png"> <img width="309" height="550" src="Screenshots/screen2.png">
 
 ## Library Used
 * [thecocktaildb API](https://www.thecocktaildb.com/api.php)
